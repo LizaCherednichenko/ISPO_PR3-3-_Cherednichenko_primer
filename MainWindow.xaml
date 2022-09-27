@@ -36,7 +36,7 @@
 
         <TextBox x:Name="Itog" Grid.Row="3" Grid.ColumnSpan="4" Margin="10"/>
         <Button x:Name="Pusk" Grid.Row="4" Grid.Column="1" Content="ПУСК" Click="Pusk_Click"/>
-        <Button x:Name="Clin" Grid.Row="4" Grid.Column="3" Content="Очистить"/>
+        <Button x:Name="Clin" Grid.Row="4" Grid.Column="3" Content="Очистить" Click="Clin_Click"/>
 
     </Grid>
 </Window>

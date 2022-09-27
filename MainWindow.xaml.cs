@@ -42,8 +42,39 @@ namespace ISPO_PR3_3__Cherednichenko_primer
             int n = 0;
             double u;
 
+            if (Radio2.IsChecked == true) n = 1;
+            else if (Radio3.IsChecked == true) n = 2;
 
+            //Вычисление U
+            switch (n)
+            {
+                case 0:
+                    if ((z - x) == 0) u = y * Math.Sin(x) * Math.Sin(x) + z;
+                    else if ((z - x) < 0) u = y * Math.Exp(Math.Sin(x)) - z;
+                    else u = y * Math.Sin(Math.Sin(x)) + z;
+                    Itog.Text += "U = " + Convert.ToString(u) + Environment.NewLine;
+                    break;
 
+                case 1:
+                    if ((z - x) == 0) u = y * Math.Cos(x) * Math.Cos(x) + z;
+                    else if ((z - x) < 0) u = y * Math.Exp(Math.Cos(x)) - z;
+                    else u = y * Math.Sin(Math.Cos(x)) + z;
+                    Itog.Text += "U = " + Convert.ToString(u) + Environment.NewLine;
+                    break;
+
+                case 2:
+                    if ((z - x) == 0) u = y * Math.Exp(x) * Math.Exp(x) + z;
+                    else if ((z - x) < 0) u = y * Math.Exp(Math.Exp(x)) - z;
+                    else u = y * Math.Sin(Math.Exp(x)) + z;
+                    Itog.Text += "U = " + Convert.ToString(u) + Environment.NewLine;
+                    break;
+            }
+
+        }
+
+        private void Clin_Click(object sender, RoutedEventArgs e)
+        {
+            Itog.Clear(); 
         }
     }
 }
